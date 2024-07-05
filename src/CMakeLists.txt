@@ -8,5 +8,10 @@ add_executable(${EXE_NAME}
 set_target_properties(${EXE_NAME} PROPERTIES
     CXX_STANDARD 20
     CXX_EXTENSIONS OFF
-    # INTERPROCEDURAL_OPTIMIZATION TRUE
+)
+
+find_package(FFTW3 CONFIG REQUIRED)
+
+target_link_libraries(${EXE_NAME} PRIVATE
+  FFTW3::fftw3
 )
